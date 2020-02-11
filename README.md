@@ -46,4 +46,33 @@ Second, I want to see property type in a chart.
 
 ![Data](/images/pic1.png)
 
+If you want see a cell in Classification Code, it will give us the following.
+
+	df['Classification Code']
+
+For example: 
+
+	"0102 Apartment Condo"
+
+But we use only the first four digits. In order to do that, we need the following functions.
+
+	def only_first(mystr):
+	  try:
+	    new_str=re.split(' ', mystr)
+	    return new_str[0]
+	  except:
+	    np.nan
+
+Let's apply only_first() function using lambda funtion on every cell. 
+
+	df['filter3']=df['Classification Code'].map(lambda row: only_first(row))
+
+A lot more in jupyter notebook page. 
+
+That simple!
+
+Please connect me in linkedin: https://www.linkedin.com/in/byamba-enkhbat-026722162/
+
+Hire me here: www.fiverr.com/coderjs
+
 
