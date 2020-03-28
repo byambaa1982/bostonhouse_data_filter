@@ -14,11 +14,12 @@ From this gig you can see the following:
 I addicted to using Google Colab recently. Google Colab is a free cloud service and now it supports free GPU! You can improve your Python programming language coding skills, develop deep learning applications using popular libraries such as Keras, TensorFlow, PyTorch, and OpenCV.
 
 Additionally, I can access any file in my Google Drive from Google Colab using the following simple code.
-
-	from google.colab import drive
-	drive.mount('/content/gdrive', force_remount=True)
-	root_dir = "/content/gdrive/My Drive/"
-	base_dir = root_dir + 'coderjs-v1/'
+```python
+from google.colab import drive
+drive.mount('/content/gdrive', force_remount=True)
+root_dir = "/content/gdrive/My Drive/"
+base_dir = root_dir + 'coderjs-v1/'
+```
 
 Once I run this code, it will give a link. Press the link and authorize it. That is it. 
 
