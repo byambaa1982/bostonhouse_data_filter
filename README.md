@@ -25,48 +25,53 @@ Once I run this code, it will give a link. Press the link and authorize it. That
 
 Second, I want to see property type in a chart.
 
-	my_series=df['Property type'].value_counts()
-	my_df=my_series.to_frame()
+```python
+my_series=df['Property type'].value_counts()
+my_df=my_series.to_frame()
 
 
-	def barplot(x_data, y_data, x_label="", y_label="", title=""):
-	    _, ax = plt.subplots(figsize=(15, 8))
-	    # Draw bars, position them in the center of the tick mark on the x-axis
-	    ax.bar(x_data, y_data, color = '#539caf', align = 'center')
-	    # Draw error bars to show standard deviation, set ls to 'none'
-	    # to remove line between points
-	    ax.errorbar(x_data, y_data, color = '#297083', ls = 'none', lw = 2, capthick = 2)
-	    ax.set_ylabel(y_label, fontsize=16)
-	    ax.set_xlabel(x_label,fontsize=16)
-	    ax.set_title(title, fontsize=20, pad=30)
-	    plt.xticks(x_data, labels=x_data, rotation='vertical')
+def barplot(x_data, y_data, x_label="", y_label="", title=""):
+    _, ax = plt.subplots(figsize=(15, 8))
+    # Draw bars, position them in the center of the tick mark on the x-axis
+    ax.bar(x_data, y_data, color = '#539caf', align = 'center')
+    # Draw error bars to show standard deviation, set ls to 'none'
+    # to remove line between points
+    ax.errorbar(x_data, y_data, color = '#297083', ls = 'none', lw = 2, capthick = 2)
+    ax.set_ylabel(y_label, fontsize=16)
+    ax.set_xlabel(x_label,fontsize=16)
+    ax.set_title(title, fontsize=20, pad=30)
+    plt.xticks(x_data, labels=x_data, rotation='vertical')
 
 
-	barplot( my_df.index, my_df['Property type'], x_label="Property Types", y_label="Total Number", title="What Property Type is the Most Popular" )
-
+barplot( my_df.index, my_df['Property type'], x_label="Property Types", y_label="Total Number", title="What Property Type is the Most Popular" )
+```
 
 ![Data](/images/pic1.png)
 
 If you want see a cell in Classification Code, it will give us the following.
-
-	df['Classification Code']
+```python
+df['Classification Code']
+```
 
 For example: 
-
-	"0102 Apartment Condo"
+```python
+"0102 Apartment Condo"
+```
 
 But we use only the first four digits. In order to do that, we need the following functions.
-
-	def only_first(mystr):
-	  try:
-	    new_str=re.split(' ', mystr)
-	    return new_str[0]
-	  except:
-	    np.nan
+```python
+def only_first(mystr):
+  try:
+    new_str=re.split(' ', mystr)
+    return new_str[0]
+  except:
+    np.nan
+```
 
 Let's apply only_first() function using lambda funtion on every cell. 
-
-	df['filter3']=df['Classification Code'].map(lambda row: only_first(row))
+```python
+df['filter3']=df['Classification Code'].map(lambda row: only_first(row))
+```
 
 A lot more in jupyter notebook page. 
 
