@@ -1,19 +1,16 @@
-# Simple Data Analysis and Filters
-
-
 All code is here: https://github.com/byambaa1982/bostonhouse_data_filter/blob/master/apartments.ipynb
 
-One of my customers wanted me to scrape a Boston government website to obtain all the database of Boston Housing and apply some filters on it. 
+One of my customers wanted me to scrape a Boston government website to obtain all the database of Boston Housing and apply some filters on it.
 
-From this gig you can see the following: 
- 
-1. How to access Google Drive from Jupyter Notebook
-2. How to use some filters using lambda function
-3. Some simple data analysis
+From this gig you can see the following:
 
+How to access Google Drive from Jupyter Notebook
+How to use some filters using lambda function
+Some simple data analysis
 I addicted to using Google Colab recently. Google Colab is a free cloud service and now it supports free GPU! You can improve your Python programming language coding skills, develop deep learning applications using popular libraries such as Keras, TensorFlow, PyTorch, and OpenCV.
 
 Additionally, I can access any file in my Google Drive from Google Colab using the following simple code.
+
 ```python
 from google.colab import drive
 drive.mount('/content/gdrive', force_remount=True)
@@ -74,11 +71,5 @@ df['filter3']=df['Classification Code'].map(lambda row: only_first(row))
 ```
 
 A lot more in jupyter notebook page. 
-
-That simple!
-
-Please connect me in linkedin: https://www.linkedin.com/in/byamba-enkhbat-026722162/
-
-Hire me here: www.fiverr.com/coderjs
 
 
